@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,15 +81,15 @@ WSGI_APPLICATION = 'BakerTilly.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': os.environ.get('DB_HOST'),
+        'ENGINE': os.environ.get('DB_ENGINE'],
+        'NAME': os.environ.get['DB_NAME'],
+        'USER': os.environ.get['DB_USER'],
+        'PASSWORD': os.environ.get['DB_PASS'],
+        'HOST': os.environ.get['DB_HOST'],
         'PORT': '',
 
         'OPTIONS': {
-            'driver': os.environ.get('DB_DRIVER),
+            'driver': os.environ.get['DB_DRIVER'],
         },
     },
 }
