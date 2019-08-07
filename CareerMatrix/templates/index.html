@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Baker Tilly | Careers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/4c9bfb1201.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style_cm.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900|Inconsolata|Unica+One|PT+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-light navbar-expand-xl bg-light grey lighten-4 fixed-top justify-content-between">
+            <div class="container-fluid" id="nav-container">
+                <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target=".dual-nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse dual-nav w-50 order-3 order-xl-1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'CareerMatrix:index' %}">&nbsp; Career Progression &nbsp;</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://admin.cb-hfx.com/BTNSCPMatrix.htm">&nbsp; Full Matrix &nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="https://www.bakertilly.ca/en/btc" class="navbar-brand mx-auto d-block text-center order-1 order-xl-2 w-25">
+                    <img src="{% static 'images/Baker_Tilly_Logo_Black_RGB_PNG.png' %}" height="25px" style="margin-bottom: 10px;">
+                </a>
+
+                <div class="navbar-collapse collapse dual-nav w-50 order-3 order-xl-3">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://igloo.bakertilly.ca/offices/nova_scotia/halifax">&nbsp;&nbsp; Igloo &nbsp;&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+            
+            </div>
+        </nav>
+
+        <section id="about" style="">
+            
+            <div class="animation-container" id="main-container">
+                
+                <div class="container-fluid" id="header-container" style="height: auto;">
+                    <h1 id="header-cp">Career Progression</h1>
+                </div>
+                
+                <div class="container" id="main-form-container" form-submitted="no">
+
+                  <!-- dropdown menu & category selections -->
+                  <form method="post" id="user-form" enctype="multipart/form-data">
+                    <h4>Select a Role</h4>
+
+                    {% csrf_token %}
+                    <select name="roles" id="roles" style="display: block" required>
+                      <option value="" disabled selected>Select a Role</option>
+                      {% for role in dropdown %}
+                        <option value="{{ role.pk }}">{{ role.role }}</option>
+                      {% endfor %}
+                    </select>
+
+                    <br>
+                    
+                    <h4>Select Categories</h4>
+
+                    {% csrf_token %}
+                    <div id="category-icons">
+                      <div class="row">
+                        <div class="col-sm-4" id="prof-dev">
+                          <input name="access_chk1" value="1" class="access_chk" type="checkbox" id="cb1">
+                          <label for="cb1"><br>Professional Development</label>
+                        </div>
+
+
+                        <div class="col-sm-4" id="tech-comp">
+                          <input name="access_chk2" value="2" class="access_chk" type="checkbox" id="cb2">
+                          <label for="cb2"><br>Technical Competence</label>
+                        </div>
+
+                        <div class="col-sm-4" id="rel-int">
+                          <input name="access_chk3" value="3" class="access_chk" type="checkbox" id="cb3">
+                          <label for="cb3"><br>Relationships - Internal</label>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-4"  id="rel-ext">
+                          <input name="access_chk4" value="4" class="access_chk" type="checkbox" id="cb4">
+                          <label for="cb4"><br>Relationships - External</label>
+                        </div>
+
+                        <div class="col-sm-4"  id="produc">
+                          <input name="access_chk5" value="5" class="access_chk" type="checkbox" id="cb5">
+                          <label for="cb5"><br>Productivity</label>
+                        </div>
+
+                        <div class="col-sm-4" id="leader">
+                          <input name="access_chk6" value="6" class="access_chk" type="checkbox" id="cb6">
+                          <label for="cb6"><br>Leadership</label>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-4" id="advisor">
+                          <input name="access_chk7" value="7" class="access_chk" type="checkbox" id="cb7">
+                          <label for="cb7"><br>Advisor</label>
+                        </div>
+
+                        <div class="col-sm-4" id="tr-advisor">
+                          <input name="access_chk8" value="8" class="access_chk" type="checkbox" id="cb8">
+                          <label for="cb8"><br>Trusted Advisor</label>
+                        </div>
+
+                        <div class="col-sm-4" id="oper-excel">
+                          <input name="access_chk9" value="9" class="access_chk" type="checkbox" id="cb9">
+                          <label for="cb9"><br>Operational Excellence</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <input type="submit" id="submit" value="Continue" onclick="return">
+                  </form>
+                </div>
+
+                <div id="loading-results" form-submitted="no" name="loading-results" style="padding-top: 50px;"> 
+                    <div style="display: inline-block; height: 100%; vertical-align: middle; width: 50%;">
+                        <h4 style="text-align: right;">Loading</h4>
+                    </div>
+                    <div class="lds-css ng-scope" style="display: inline-block; height: 100%; vertical-align: middle;">
+                        <div style="width:100%;height:100%;" class="lds-pacman">
+                            <div>
+                                <div>
+                                </div>
+                                
+                                <div>
+                                </div>
+                                
+                                <div>
+                                </div>                             
+                            </div>
+                            
+                            <div>
+                                <div>
+                                </div>
+                                
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                        <style type="text/css">
+                        @keyframes lds-pacman-1 {
+                              0% {
+                                -webkit-transform: rotate(0deg);
+                                transform: rotate(0deg);
+                              }
+                              50% {
+                                -webkit-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                              }
+                              100% {
+                                -webkit-transform: rotate(0deg);
+                                transform: rotate(0deg);
+                              }
+                            }
+                            @-webkit-keyframes lds-pacman-1 {
+                              0% {
+                                -webkit-transform: rotate(0deg);
+                                transform: rotate(0deg);
+                              }
+                              50% {
+                                -webkit-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                              }
+                              100% {
+                                -webkit-transform: rotate(0deg);
+                                transform: rotate(0deg);
+                              }
+                            }
+                            @keyframes lds-pacman-2 {
+                              0% {
+                                -webkit-transform: rotate(180deg);
+                                transform: rotate(180deg);
+                              }
+                              50% {
+                                -webkit-transform: rotate(225deg);
+                                transform: rotate(225deg);
+                              }
+                              100% {
+                                -webkit-transform: rotate(180deg);
+                                transform: rotate(180deg);
+                              }
+                            }
+                            @-webkit-keyframes lds-pacman-2 {
+                              0% {
+                                -webkit-transform: rotate(180deg);
+                                transform: rotate(180deg);
+                              }
+                              50% {
+                                -webkit-transform: rotate(225deg);
+                                transform: rotate(225deg);
+                              }
+                              100% {
+                                -webkit-transform: rotate(180deg);
+                                transform: rotate(180deg);
+                              }
+                            }
+                            @keyframes lds-pacman-3 {
+                              0% {
+                                -webkit-transform: translate(190px, 0);
+                                transform: translate(190px, 0);
+                                opacity: 0;
+                              }
+                              20% {
+                                opacity: 1;
+                              }
+                              100% {
+                                -webkit-transform: translate(70px, 0);
+                                transform: translate(70px, 0);
+                                opacity: 1;
+                              }
+                            }
+                            @-webkit-keyframes lds-pacman-3 {
+                              0% {
+                                -webkit-transform: translate(190px, 0);
+                                transform: translate(190px, 0);
+                                opacity: 0;
+                              }
+                              20% {
+                                opacity: 1;
+                              }
+                              100% {
+                                -webkit-transform: translate(70px, 0);
+                                transform: translate(70px, 0);
+                                opacity: 1;
+                              }
+                            }
+                            .lds-pacman {
+                              position: relative;
+                            }
+                            .lds-pacman > div:nth-child(2) div {
+                              position: absolute;
+                              top: 40px;
+                              left: 40px;
+                              width: 120px;
+                              height: 60px;
+                              border-radius: 120px 120px 0 0;
+                              background: #f3f3f3;
+                              -webkit-animation: lds-pacman-1 0.6s linear infinite;
+                              animation: lds-pacman-1 0.6s linear infinite;
+                              -webkit-transform-origin: 60px 60px;
+                              transform-origin: 60px 60px;
+                            }
+                            .lds-pacman > div:nth-child(2) div:nth-child(2) {
+                              -webkit-animation: lds-pacman-2 0.6s linear infinite;
+                              animation: lds-pacman-2 0.6s linear infinite;
+                            }
+                            .lds-pacman > div:nth-child(1) div {
+                              position: absolute;
+                              top: 92px;
+                              left: -8px;
+                              width: 16px;
+                              height: 16px;
+                              border-radius: 50%;
+                              background: #d8dddf;
+                              -webkit-animation: lds-pacman-3 0.6s linear infinite;
+                              animation: lds-pacman-3 0.6s linear infinite;
+                            }
+                            .lds-pacman > div:nth-child(1) div:nth-child(1) {
+                              -webkit-animation-delay: -0.402s;
+                              animation-delay: -0.402s;
+                            }
+                            .lds-pacman > div:nth-child(1) div:nth-child(2) {
+                              -webkit-animation-delay: -0.198s;
+                              animation-delay: -0.198s;
+                            }
+                            .lds-pacman > div:nth-child(1) div:nth-child(3) {
+                              -webkit-animation-delay: 0s;
+                              animation-delay: 0s;
+                            }
+                            .lds-pacman {
+                              width: 75px !important;
+                              height: 75px !important;
+                              -webkit-transform: translate(-37.5px, -37.5px) scale(0.375) translate(37.5px, 37.5px);
+                              transform: translate(-37.5px, -37.5px) scale(0.375) translate(37.5px, 37.5px);
+                            }
+                        </style>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+    
+    
+    
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- script to show/hide loading and results divs and appropriate times -->     
+    <script>   
+        $(document).ready(function(){
+            if($('#main-form-container').attr('form-submitted') == "yes") {
+               $('#results').hide(); 
+            }              
+            if($('#loading-results').attr('form-submitted') == "no") {
+               $('#loading-results').hide(); 
+            }
+        });
+        
+        $(document).ready(function(){
+            $("#submit").click(function(event){
+                $("#main-form-container").hide();
+                $("#loading-results").show();
+                $("#main-form-container").submit();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

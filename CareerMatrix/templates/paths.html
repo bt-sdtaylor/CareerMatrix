@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Baker Tilly | Results</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/4c9bfb1201.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style/style_cm.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900|Inconsolata|Unica+One|PT+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-light navbar-expand-xl bg-light grey lighten-4 fixed-top justify-content-between">
+            <div class="container-fluid" id="nav-container">
+                <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target=".dual-nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse dual-nav w-50 order-3 order-xl-1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'CareerMatrix:index' %}">&nbsp; Career Progression &nbsp;</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://admin.cb-hfx.com/BTNSCPMatrix.htm">&nbsp; Full Matrix &nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="https://www.bakertilly.ca/en/btc" class="navbar-brand mx-auto d-block text-center order-1 order-xl-2 w-25">
+                    <img src="{% static 'images/Baker_Tilly_Logo_Black_RGB_PNG.png' %}" height="25px" style="margin-bottom: 10px;">
+                </a>
+
+                <div class="navbar-collapse collapse dual-nav w-50 order-3 order-xl-3">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" style="padding-left: 5px; padding-right: 5px;" href="images/https://igloo.bakertilly.ca/offices/nova_scotia/halifax">&nbsp;&nbsp; Igloo &nbsp;&nbsp;</a>
+                        </li>
+                    </ul>
+                </div>
+            
+            </div>
+        </nav>
+
+        <section id="about" style="">
+            
+            <div class="animation-container" id="main-container">
+                
+                <div class="container-fluid" id="header-container" style="position: fixed; z-index: 2; ">
+                    <h1 id="header-cp">Career Progression</h1>
+                    <h4 id="header-cp-sub">{{ role_selected }}</h4>
+                    <hr style="margin-top: 20px">
+
+                    <div class="row">
+                        <div class="col-md-2" id="placeholder-role"></div>
+                        <div class="col-md-5" id="curr-role">
+                            <h5 style="text-align: center"><b> {{ role_selected }} </b></h5>
+                            <h6 style="text-align: center"> {{ curr_year }} </h6>
+                        </div>
+                        <div class="col-md-5" id="next-role">
+                            <h5 style="text-align: center"><b> {{ next_role }} </b></h5>
+                            <h6 style="text-align: center"> {{ next_year }} </h6>
+                        </div>
+
+                        <div class="col-md-12" id="pos-header-media">
+                            <h6 style="text-align: center"><b>Current Role: {{ role_selected }}</b> ({{ curr_year }})</h6>
+                            <h6 style="text-align: center"><b>Next Role: {{ next_role }}</b> ({{ next_year }})</h6>
+                        
+                        </div>
+                    </div>
+                    <hr style="margin: 0px">
+                </div>                
+                
+                <div class="container-fluid" style="padding-left: 10px; padding-right: 10px; margin-left: 0px; margin-right: 0px;">
+
+                    <!-- shows data retrieved from the database -->
+                    <div class="container-fluid" id="main-data-cont" style="width: 100%; background-color: white; margin-top: 290px; z-index: 1; padding-left: 0px; padding-right: 0px;">
+                        {% for category, data in display_data.items %}
+                            <div class="row" style="width: 100%; margin: 0px;">
+                                <div class="col-md-2"  style="display: inline-block;">
+                                    <h5 style="text-align: center; padding-top: 20px;"> {{ category }} </h5>
+                                </div>
+
+                                {% for cat_part, data_part in data.items %}
+                                    <div class="col-md-5"  style="display: inline-block; border-left: 1px solid #F6F5F5;">
+                                        <h5 style="text-align: center; padding-top: 20px;"> {{ cat_part }} </h5>
+
+                                        {% for data_key, data_value in data_part.items %}
+                                            {% if data_key == 'bill_hours_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px"><u> Billable Hours:</u> {{ data_value|linebreaksbr }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'general_content_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px">{{ data_value }}</p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_header_first_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <br>
+                                                    <p style="text-align: center; padding-bottom: 20px"><b>{{ data_value|linebreaksbr }}</b></p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_content_first_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px">{{ data_value }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'sub_header_second_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <br>
+                                                    <p style="text-align: center; padding-bottom: 20px;"><b>{{ data_value|linebreaksbr }}</b></p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_content_second_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px">{{ data_value }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'sub_header_third_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <br>
+                                                    <p style="text-align: center; padding-bottom: 20px;"><b>{{ data_value|linebreaksbr }}</b></p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_content_third_curr' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px">{{ data_value }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'section_not_applicable' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="text-align: center; padding-bottom: 20px;">{{ data_value|linebreaksbr }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'bill_hours_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px"><u> Billable Hours:</u> {{ data_value|linebreaksbr }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'general_content_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px">{{ data_value }}</p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_header_first_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="text-align: center; padding-bottom: 20px;"><b>{{ data_value|linebreaksbr }}</b></p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_content_first_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px">{{ data_value }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'sub_header_second_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="text-align: center; padding-bottom: 20px;"><b>{{ data_value|linebreaksbr }}</b></p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_content_second_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px">{{ data_value }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'sub_header_third_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="text-align: center; padding-bottom: 20px;"><b>{{ data_value|linebreaksbr }}</b></p>
+                                                {% endif %}
+                                            
+                                            {% elif data_key == 'sub_content_third_next' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="padding-bottom: 20px;">{{ data_value }}</p>
+                                                {% endif %}
+
+                                            {% elif data_key == 'section_not_applicable' %}
+                                                
+                                                {% if data_value %}
+                                                    <p style="text-align: center; padding-bottom: 20px;">{{ data_value|linebreaksbr }}</p>
+                                                {% endif %}
+
+                                            {% endif %}
+
+                                        {% endfor %}
+
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <hr style="margin: 0px">
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="container-fluid" style="padding-left: 10px; padding-right: 10px; margin-left: 0px; margin-right: 0px; margin-bottom: 20px; margin-top: 20px;">
+                    <a id="dl-button-temp" href="{% url 'CareerMatrix:index' %}">Back</a>
+                </div>
+
+           </div>
+ 
+        </section>
+    </div>
+    
+    
+    
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
