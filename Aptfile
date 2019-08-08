@@ -1,0 +1,6 @@
+unixodbc
+unixodbc-dev
+python-pyodbc
+libsqliteodbc
+
+package "mysql-server"
