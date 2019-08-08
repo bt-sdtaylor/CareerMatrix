@@ -90,6 +90,7 @@ DATABASES = {
 
         'OPTIONS': {
             'driver': os.environ.get('DB_DRIVER'),
+            'host_is_server': True,
         },
     },
 }
