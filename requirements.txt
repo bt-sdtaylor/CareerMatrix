@@ -1,7 +1,6 @@
 dj-database-url==0.5.0
 dj-static==0.0.6
 Django==2.1.11
-django-excel==0.0.10
 django-heroku==0.3.1
 django-pyodbc-azure==2.1.0.0
 djangorestframework==3.10.1
@@ -12,4 +11,3 @@ python-decouple==3.1
 pytz==2019.1
 setuptools==40.8.0
 whitenoise==4.1.3
-
