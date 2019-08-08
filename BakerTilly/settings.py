@@ -93,7 +93,7 @@ DATABASES = {
         'PORT': '',
     
         'OPTIONS': {
-            'driver': '{ODBC Driver 13 for SQL Server}',
+            'driver': '{ODBC Driver 17 for SQL Server}',
         },
     },
 }
