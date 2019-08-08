@@ -93,7 +93,7 @@ DATABASES = {
         'PORT': '',
     
         'OPTIONS': {
-            'driver': os.environ.get('DB_DRIVER'),
+            'driver': '{ODBC Driver 13 for SQL Server}',
         },
     },
 }
