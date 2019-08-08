@@ -81,15 +81,21 @@ WSGI_APPLICATION = 'BakerTilly.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
+        #'ENGINE': os.environ.get('DB_ENGINE'),
+        'ENGINE': 'sql_server.pyodbc',
+        #'NAME': os.environ.get('DB_NAME'),
+        'NAME': 'careermatrix',
+        #'USER': os.environ.get('DB_USER'),
+        'USER': 'admin_bt@careermatrix',
         'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        #'HOST': os.environ.get('DB_HOST'),
+        'HOST': 'careermatrix.database.windows.net',
+        #'PORT': os.environ.get('DB_PORT'),
+        'PORT': '',
 
         'OPTIONS': {
-            'driver': os.environ.get('DB_DRIVER'),
+        #    'driver': os.environ.get('DB_DRIVER'),
+            'driver': 'ODBC Driver 13 for SQL Server',
         },
     },
 }
