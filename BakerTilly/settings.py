@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'BakerTilly.wsgi.application'
 
 DATABASES = {
     'default': {
-        'DRIVER': os.environ.get('DB_DRIVER'],
+        'DRIVER': os.environ.get['DB_DRIVER'],
         'NAME': os.environ.get['DB_NAME'],
         'USER': os.environ.get['DB_USER'],
         'PASSWORD': os.environ.get['DB_PASS'],
