@@ -80,18 +80,22 @@ WSGI_APPLICATION = 'BakerTilly.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 
-        'OPTIONS': {
-            'driver': os.environ.get('DB_DRIVER'),
-        },
-    },
+    #'default': {
+    #    'ENGINE': os.environ.get('DB_ENGINE'),
+    #    'NAME': os.environ.get('DB_NAME'),
+    #   'USER': os.environ.get('DB_USER'),
+    #    'PASSWORD': os.environ.get('DB_PASS'),
+    #    'HOST': os.environ.get('DB_HOST'),
+    #    'PORT': '',
+    #
+    #    'OPTIONS': {
+    #        'driver': os.environ.get('DB_DRIVER'),
+    #    },
+    #},
 }
 
 DATABASE_CONNECTION_POOLING = False
