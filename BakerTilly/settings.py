@@ -89,7 +89,7 @@ DATABASES = {
         'PORT': '',
 
         'OPTIONS': {
-            'driver': os.environ.get('DB_DRIVER'),
+            'DRIVER': os.environ.get('DB_DRIVER'),
         },
     },
 }
