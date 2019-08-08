@@ -1,1 +1,1 @@
-web: gunicorn sherrbss.wsgi --log-file -
+web: gunicorn career-matrix.wsgi --log-file -
