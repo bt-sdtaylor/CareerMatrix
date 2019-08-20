@@ -281,6 +281,10 @@ nav.navbar.navbar-light.navbar-expand-xl.bg-light.grey.lighten-4.fixed-top.justi
     height: 100%;
     margin: auto;
     text-align: center;
+    -webkit-text-decoration: rgba(104, 226, 48, 0.55) solid underline;
+    text-decoration: rgba(104, 226, 48, 0.55) solid underline;
+    -webkit-text-underline-position: auto;
+    text-underline-position: auto;
 }
 
 #header-cp-sub {
