@@ -69,7 +69,7 @@
                     <h4>Select a Role</h4>
 
                     {% csrf_token %}
-                    <select name="roles" id="roles" style="display: block" required>
+                    <select name="roles" id="roles" style="display: block" required="required">
                       <option value="" disabled="disabled">Select a Role</option>
                       {% for role in dropdown %}
                         <option value="{{ role.pk }}">{{ role.role }}</option>
@@ -329,13 +329,6 @@
         
         $(document).ready(function(){
             $("#submit").click(function(event){
-                $( "#user-form" ).validate({
-                  rules: {
-                      roles: { required: true }
-                  }
-                });
-                
-
                 $("#main-form-container").hide();
                 $("#loading-results").show();
                 $("#main-form-container").submit();
