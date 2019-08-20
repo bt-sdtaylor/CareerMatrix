@@ -273,7 +273,7 @@ nav.navbar.navbar-light.navbar-expand-xl.bg-light.grey.lighten-4.fixed-top.justi
     margin: 0px !important;
     width: 100% !important;
     height: auto !important;
-    
+    background-color: white;
 }
 
 #header-cp {
