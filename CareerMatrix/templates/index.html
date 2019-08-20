@@ -66,7 +66,7 @@
 
                   <!-- dropdown menu & category selections -->
                   <form method="post" id="user-form" enctype="multipart/form-data">
-                    <h5 style="color: rgba(104, 226, 48, 0.55);">Select a Role</h4>
+                    <h5>Select a Role</h5>
 
                     {% csrf_token %}
                     <select name="roles" id="roles" style="display: block" required="required">
@@ -78,7 +78,7 @@
 
                     <br>
                     
-                    <h5 style="color: rgba(104, 226, 48, 0.55);">Select Categories</h4>
+                    <h5>Select Categories</h5>
 
                     {% csrf_token %}
                     <div id="category-icons">
