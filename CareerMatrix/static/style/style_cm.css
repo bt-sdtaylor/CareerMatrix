@@ -356,7 +356,7 @@ Category icon styling
 #prof-dev:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #prof-dev input[type=checkbox] {
@@ -390,7 +390,7 @@ Category icon styling
 #prof-dev input[type=checkbox]:checked + label:before {
     content: "\f02d";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
     }
 
@@ -403,7 +403,7 @@ Category icon styling
 #tech-comp:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #tech-comp input[type=checkbox] {
@@ -438,7 +438,7 @@ Category icon styling
 #tech-comp input[type=checkbox]:checked + label:before {
     content: "\f109";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 
@@ -451,7 +451,7 @@ Category icon styling
 #rel-int:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #rel-int input[type=checkbox] {
@@ -485,7 +485,7 @@ Category icon styling
 #rel-int input[type=checkbox]:checked + label:before {
     content: "\f164";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 
@@ -498,7 +498,7 @@ Category icon styling
 #rel-ext:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #rel-ext input[type=checkbox] {
@@ -533,7 +533,7 @@ Category icon styling
 #rel-ext input[type=checkbox]:checked + label:before {
     content: "\f2b5";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 
@@ -546,7 +546,7 @@ Category icon styling
 #produc:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #produc input[type=checkbox] {
@@ -580,7 +580,7 @@ Category icon styling
 #produc input[type=checkbox]:checked + label:before {
     content: "\f080";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 
@@ -593,7 +593,7 @@ Category icon styling
 #leader:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #leader input[type=checkbox] {
@@ -628,7 +628,7 @@ Category icon styling
 #leader input[type=checkbox]:checked + label:before {
     content: "\f0c0";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 
@@ -641,7 +641,7 @@ Category icon styling
 #advisor:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #advisor input[type=checkbox] {
@@ -675,7 +675,7 @@ Category icon styling
 #advisor input[type=checkbox]:checked + label:before {
     content: "\f0eb";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 
@@ -688,7 +688,7 @@ Category icon styling
 #tr-advisor:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #tr-advisor input[type=checkbox] {
@@ -722,7 +722,7 @@ Category icon styling
 #tr-advisor input[type=checkbox]:checked + label:before {
     content: "\f4fc";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 
@@ -735,7 +735,7 @@ Category icon styling
 #oper-excel:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(81, 255, 0, 0.602);
+    border-color: rgba(104, 226, 48, 0.55);
 }
 
 #oper-excel input[type=checkbox] {
@@ -769,7 +769,7 @@ Category icon styling
 #oper-excel input[type=checkbox]:checked + label:before {
     content: "\f201";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(81, 255, 0, 0.602);
+    color: rgba(104, 226, 48, 0.55);
     letter-spacing: 5px;
 }
 

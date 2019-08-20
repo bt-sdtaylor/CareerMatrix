@@ -31,7 +31,7 @@
                 <div class="navbar-collapse collapse dual-nav w-50 order-3 order-xl-1">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'CareerMatrix:index' %}">&nbsp; Career Progression Matrix &nbsp;</a>
+                            <a class="nav-link" href="{% url 'CareerMatrix:index' %}">&nbsp; Career Progression &nbsp;</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="http://admin.cb-hfx.com/BTNSCPMatrix.htm">&nbsp; Full Matrix &nbsp;</a>
@@ -59,7 +59,7 @@
             <div class="animation-container" id="main-container">
                 
                 <div class="container-fluid" id="header-container" style="position: fixed; z-index: 2; ">
-                    <h1 id="header-cp">Career Progression</h1>
+                    <h1 id="header-cp">Career Progression Matrix</h1>
                     <h4 id="header-cp-sub">{{ role_selected }}</h4>
                     <hr style="margin-top: 20px">
 
@@ -90,7 +90,7 @@
                         {% for category, data in display_data.items %}
                             <div class="row" style="width: 100%; margin: 0px;">
                                 <div class="col-md-2"  style="display: inline-block;">
-                                    <h5 style="text-align: center; padding-top: 20px; color: rgba(243, 43, 43, 0.5);"> {{ category }} </h5>
+                                    <h5 style="text-align: center; padding-top: 20px; color: rgba(104, 226, 48, 0.55);"> {{ category }} </h5>
                                 </div>
 
                                 {% for cat_part, data_part in data.items %}
