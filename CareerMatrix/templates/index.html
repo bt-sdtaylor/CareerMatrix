@@ -329,6 +329,13 @@
         
         $(document).ready(function(){
             $("#submit").click(function(event){
+                $( "#user-form" ).validate({
+                  rules: {
+                      roles: { required: true }
+                  }
+                });
+                
+
                 $("#main-form-container").hide();
                 $("#loading-results").show();
                 $("#main-form-container").submit();
