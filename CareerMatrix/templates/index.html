@@ -70,7 +70,7 @@
 
                     {% csrf_token %}
                     <select name="roles" id="roles" style="display: block" required>
-                      <option value="" disabled selected>Select a Role</option>
+                      <option value="" disabled="disabled">Select a Role</option>
                       {% for role in dropdown %}
                         <option value="{{ role.pk }}">{{ role.role }}</option>
                       {% endfor %}
