@@ -975,7 +975,7 @@ Category icon styling
 
 #submit[type=submit]:hover {
     /*background-color:rgba(44, 46, 44, 0.24);*/
-    background-color:rgba(3, 248, 64, 0.24);
+    background-color:rgba(81, 255, 0, 0.24);
     box-shadow: rgb(143, 146, 148);
 }
 
@@ -1007,7 +1007,7 @@ Category icon styling
 
 #submit[type=submit]:hover {
     /*background-color:rgba(44, 46, 44, 0.24);*/
-    background-color:rgba(3, 248, 64, 0.24);
+    background-color:rgba(81, 255, 0, 0.24);
     box-shadow: rgb(143, 146, 148);
 }
     
@@ -1038,7 +1038,8 @@ Category icon styling
 }
     
 #dl-button-temp:hover {
-    background-color:rgba(44, 45, 46, 0.24);
+    /*background-color:rgba(44, 46, 44, 0.24);*/
+    background-color:rgba(81, 255, 0, 0.24);
     box-shadow: rgb(143, 146, 148);
     text-decoration: none !important;
 }
@@ -1074,7 +1075,8 @@ Category icon styling
 }
     
 #dl-button-final:hover {
-    background-color:rgba(44, 45, 46, 0.24);
+    /*background-color:rgba(44, 46, 44, 0.24);*/
+    background-color:rgba(81, 255, 0, 0.24);
     box-shadow: rgb(143, 146, 148);
     text-decoration: none !important;
 }
