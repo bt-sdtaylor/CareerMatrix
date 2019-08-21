@@ -996,7 +996,8 @@ Category icon styling
 }
 
 #submit[type=submit]:hover {
-    background-color:rgba(104, 226, 48, 0.55);
+    /*background-color:rgba(104, 226, 48, 0.55);*/
+    background-image: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
     
     box-shadow: rgb(143, 146, 148);
 }
