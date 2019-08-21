@@ -409,10 +409,9 @@ Category icon styling
 #prof-dev input[type=checkbox]:checked + label:before {
     content: "\f02d";
     font-family: 'Font Awesome 5 Free';
-    /*color: #00ff5e8f;*/
-    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
+    color: #00ff5e8f;
     letter-spacing: 5px;
-    }
+}
 
 /* technical competence */
 #tech-comp {
@@ -423,7 +422,8 @@ Category icon styling
 #tech-comp:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #tech-comp input[type=checkbox] {
@@ -458,7 +458,7 @@ Category icon styling
 #tech-comp input[type=checkbox]:checked + label:before {
     content: "\f109";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
@@ -471,7 +471,8 @@ Category icon styling
 #rel-int:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #rel-int input[type=checkbox] {
@@ -505,7 +506,7 @@ Category icon styling
 #rel-int input[type=checkbox]:checked + label:before {
     content: "\f164";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
@@ -518,7 +519,8 @@ Category icon styling
 #rel-ext:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #rel-ext input[type=checkbox] {
@@ -553,7 +555,7 @@ Category icon styling
 #rel-ext input[type=checkbox]:checked + label:before {
     content: "\f2b5";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
@@ -566,7 +568,8 @@ Category icon styling
 #produc:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #produc input[type=checkbox] {
@@ -600,7 +603,7 @@ Category icon styling
 #produc input[type=checkbox]:checked + label:before {
     content: "\f080";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
@@ -613,7 +616,8 @@ Category icon styling
 #leader:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #leader input[type=checkbox] {
@@ -648,7 +652,7 @@ Category icon styling
 #leader input[type=checkbox]:checked + label:before {
     content: "\f0c0";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
@@ -661,7 +665,8 @@ Category icon styling
 #advisor:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #advisor input[type=checkbox] {
@@ -695,7 +700,7 @@ Category icon styling
 #advisor input[type=checkbox]:checked + label:before {
     content: "\f0eb";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
@@ -708,7 +713,8 @@ Category icon styling
 #tr-advisor:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #tr-advisor input[type=checkbox] {
@@ -742,7 +748,7 @@ Category icon styling
 #tr-advisor input[type=checkbox]:checked + label:before {
     content: "\f4fc";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
@@ -755,7 +761,8 @@ Category icon styling
 #oper-excel:hover {
     border: 1px solid;
     border-radius: 5px;
-    border-color: rgba(104, 226, 48, 0.55);
+    border-color: #8181812d;
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
 #oper-excel input[type=checkbox] {
@@ -789,7 +796,7 @@ Category icon styling
 #oper-excel input[type=checkbox]:checked + label:before {
     content: "\f201";
     font-family: 'Font Awesome 5 Free';
-    color: rgba(104, 226, 48, 0.55);
+    color: #00ff5e8f;
     letter-spacing: 5px;
 }
 
