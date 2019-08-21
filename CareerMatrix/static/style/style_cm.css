@@ -1035,6 +1035,12 @@ Category icon styling
     display: block;
     text-align: center;
 }
+
+@media (max-width: 767px) {
+    #dl-button-temp {
+        width: 90%;
+    }
+}
     
 #dl-button-temp:hover {
     /*background-color:rgba(104, 226, 48, 0.55);*/
