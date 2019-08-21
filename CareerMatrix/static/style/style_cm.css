@@ -299,7 +299,7 @@ nav.navbar.navbar-light.navbar-expand-xl.bg-light.grey.lighten-4.fixed-top.justi
 
 /* fancy underline */
 .underline--magical {
-    background-image: linear-gradient(120deg, #00ff5e 0%, #00ff5e8f 100%);
+    background-image: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
     /*background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);*/
     background-repeat: no-repeat;
     background-size: 100% 0.2em;
