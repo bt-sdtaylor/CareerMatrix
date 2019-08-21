@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900|Inconsolata|Unica+One|PT+Sans&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js">
+    
 
     
     <style type="text/css">
@@ -26,8 +28,7 @@
             flex-direction: column;
             background-size: cover;
         }
-    </style>
-    
+    </style>    
 
 </head>
 
@@ -70,7 +71,7 @@
             <div class="animation-container" id="main-container">
                 
                 <div class="container-fluid" id="header-container" style="height: auto;">
-                    <h1 id="header-cp">Career Progression Matrix</h1>
+                    <h1 id="header-cp"><span class-"underline--magical">Career Progression Matrix</span></h1>
                 </div>
                 
                 <div class="container" id="main-form-container" form-submitted="no">
@@ -345,6 +346,53 @@
                 $("#main-form-container").submit();
             });
         });
+
+        // VARIABLES
+        const magicalUnderlines = Array.from(document.querySelectorAll('.underline--magical'));
+
+        const gradientAPI = 'https://gist.githubusercontent.com/wking-io/3e116c0e5675c8bcad8b5a6dc6ca5344/raw/4e783ce3ad0bcd98811c6531e40256b8feeb8fc8/gradient.json';
+
+        // HELPER FUNCTIONS
+
+        // 1. Get random number in range. Used to get random index from array.
+        const randNumInRange = max => Math.floor(Math.random() * (max - 1));
+
+        // 2. Merge two separate array values at the same index to 
+        // be the same value in new array.
+        const mergeArrays = (arrOne, arrTwo) => arrOne.map((item, i) => `${item} ${arrTwo[i]}`).join(', ');
+
+        // 3. Curried function to add a background to array of elms
+        const addBackground = elms => color => {
+          elms.forEach(el => {
+            el.style.backgroundImage = color;
+          });
+        };
+        // 4. Function to get data from API
+        const getData = async url => {
+          const response = await fetch(url);
+          const data = await response.json();
+          return data.data;
+        };
+
+        // 5. Partial Application of addBackground to always apply 
+        // background to the magicalUnderlines constant
+        const addBackgroundToUnderlines = addBackground(magicalUnderlines);
+
+        // GRADIENT FUNCTIONS
+
+        // 1. Build CSS formatted linear-gradient from API data
+        const buildGradient = obj => `linear-gradient(${obj.direction}, ${mergeArrays(obj.colors, obj.positions)})`;
+
+        // 2. Get single gradient from data pulled in array and
+        // apply single gradient to a callback function
+        const applyGradient = async (url, callback) => {
+          const data = await getData(url);
+          const gradient = buildGradient(data[randNumInRange(data.length)]);
+          callback(gradient);
+        };
+
+        // RESULT
+        applyGradient(gradientAPI, addBackgroundToUnderlines);
     </script>
 
 </body>
