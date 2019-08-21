@@ -362,17 +362,17 @@
         const mergeArrays = (arrOne, arrTwo) => arrOne.map((item, i) => `${item} ${arrTwo[i]}`).join(', ');
 
         // 3. Curried function to add a background to array of elms
-        const addBackground = elms => color => {
+        const addBackground = (elms) => (color) => {
           elms.forEach(el => {
             el.style.backgroundImage = color;
           });
-        };
+        }
         // 4. Function to get data from API
-        const getData = async url => {
+        const getData = async(url) => {
           const response = await fetch(url);
           const data = await response.json();
           return data.data;
-        };
+        }
 
         // 5. Partial Application of addBackground to always apply 
         // background to the magicalUnderlines constant
@@ -381,15 +381,15 @@
         // GRADIENT FUNCTIONS
 
         // 1. Build CSS formatted linear-gradient from API data
-        const buildGradient = obj => `linear-gradient(${obj.direction}, ${mergeArrays(obj.colors, obj.positions)})`;
+        const buildGradient = (obj) => `linear-gradient(${obj.direction}, ${mergeArrays(obj.colors, obj.positions)})`;
 
         // 2. Get single gradient from data pulled in array and
         // apply single gradient to a callback function
-        const applyGradient = async (url, callback) => {
+        const applyGradient = async(url, callback) => {
           const data = await getData(url);
           const gradient = buildGradient(data[randNumInRange(data.length)]);
           callback(gradient);
-        };
+        }
 
         // RESULT
         applyGradient(gradientAPI, addBackgroundToUnderlines);
