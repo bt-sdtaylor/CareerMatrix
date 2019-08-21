@@ -374,7 +374,7 @@ Category icon styling
 #prof-dev:hover {
     border: 1px solid;
     border-radius: 5px;
-    /*border-color: #00ff5e8f;*/
+    border-color: #8181812d;
     background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
 }
 
@@ -409,7 +409,8 @@ Category icon styling
 #prof-dev input[type=checkbox]:checked + label:before {
     content: "\f02d";
     font-family: 'Font Awesome 5 Free';
-    color: #00ff5e8f;
+    /*color: #00ff5e8f;*/
+    background: linear-gradient(120deg, #00ff5e8f 0%, #00ff5e24 100%);
     letter-spacing: 5px;
     }
 
